@@ -39,8 +39,9 @@
 --                              PROJECT ARTIFACTS
 -- ============================================================================
 /*
-- Live Report Document Link: [https://docs.google.com/document/d/1AuraCareSmartClinicReport2026/edit?usp=sharing](https://docs.google.com/document/d/1-AI9AmQwSCbFYrTkSOxY9n3kVyjo_O4VCezg0pNOZ8s/edit?usp=drivesdk)
-- GitHub Repository Link: https://github.com/SaudiElectronicUniversity/IT244-AuraCare-SmartClinic
+- Live Report Document Link: https://docs.google.com/document/d/1-AI9AmQwSCbFYrTkSOxY9n3kVyjo_O4VCezg0pNOZ8s/edit?usp=drivesdk
+- GitHub Repository Link: https://github.com/d7ah52/IT-244-project-SmartClinic
+
 */
 
 -- ============================================================================
