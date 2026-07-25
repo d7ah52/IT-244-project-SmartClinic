@@ -1,14 +1,15 @@
--- ============================================================================
--- COURSE CONTEXT: IT244 - Introduction to Database
--- TEXTBOOK: Fundamentals of Database Systems (Elmasri & Navathe)
--- PROJECT NAME: AuraCare Smart Clinic Database System
--- SUBMISSION DATE: July 25, 2026⁠
--- ============================================================================
 
--- ============================================================================
---                          MID-PROJECT PROGRESS REPORT
--- ============================================================================
-/*
+COURSE CONTEXT: # IT244 - Introduction to Database
+
+**TEXTBOOK:** Fundamentals of Database Systems (Elmasri & Navathe)
+
+**PROJECT** NAME: AuraCare Smart Clinic Database System
+
+**SUBMISSION** DATE: July 25, 2026
+
+---
+
+## MID-PROJECT PROGRESS REPORT
 1. WORK COMPLETED DURING THIS PERIOD:
    - Finalized the EER conceptual model using Option 8A (Superclass/Subclass).
    - Designed the relational schema normalized to 3rd Normal Form (3NF).
@@ -21,8 +22,8 @@
 
 3. PROBLEM ENCOUNTERED DURING THE PROCESS:
    - Encountered a circular dependency and foreign key constraint violation during 
-     table creation. Solved by carefully ordering the DDL statements (Person first, 
-     then subclasses, then transactional tables).
+   - table creation. Solved by carefully ordering the DDL statements (Person first, 
+   - then subclasses, then transactional tables).
 
 4. PLAN FOR WHAT TO DO NEXT:
    - Implement database indexing on high-frequency search columns (Appt_Date).
@@ -33,21 +34,17 @@
    - Member 2: DML Data Population, Saudi Dataset Localization, and View Creation.
    - Member 3: Trigger Development, SQL Query Optimization, and Testing.
    - Member 4: Documentation, GitHub Repository Management, and Reflection Essay.
-*/
 
--- ============================================================================
---                              PROJECT ARTIFACTS
--- ============================================================================
-/*
-- Live Report Document Link: https://docs.google.com/document/d/1-AI9AmQwSCbFYrTkSOxY9n3kVyjo_O4VCezg0pNOZ8s/edit?usp=drivesdk
-- GitHub Repository Link: https://github.com/d7ah52/IT-244-project-SmartClinic
 
-*/
+##  PROJECT ARTIFACTS
+* Live Report Document Link: https://docs.google.com/document/d/1-AI9AmQwSCbFYrTkSOxY9n3kVyjo_O4VCezg0pNOZ8s/edit?usp=drivesdk
+* GitHub Repository Link: https://github.com/d7ah52/IT-244-project-SmartClinic
 
--- ============================================================================
---                     TASK 2: DATABASE DDL IMPLEMENTATION
--- ============================================================================
 
+
+## TASK 2: DATABASE DDL IMPLEMENTATION
+
+```sql
 DROP DATABASE IF EXISTS SmartClinicDB;
 CREATE DATABASE IF NOT EXISTS SmartClinicDB;
 USE SmartClinicDB;
@@ -64,7 +61,7 @@ CREATE TABLE Person (
     CONSTRAINT chk_phone_format CHECK (Phone LIKE '+9665%')
 ) ENGINE=InnoDB;
 
--- 2. Subclass Table: Patient (Option 8A)
+ -- 2. Subclass Table: Patient (Option 8A)
 CREATE TABLE Patient (
     Patient_ID INT AUTO_INCREMENT,
     Blood_Group ENUM('A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-') NOT NULL,
@@ -89,7 +86,7 @@ CREATE TABLE Doctor (
     CONSTRAINT chk_fee_positive CHECK (Consultation_Fee > 0)
 ) ENGINE=InnoDB;
 
--- 4. Transactional Table: Appointment
+4. Transactional Table: Appointment
 CREATE TABLE Appointment (
     Appointment_ID INT AUTO_INCREMENT,
     Appt_Date DATE NOT NULL,
@@ -141,11 +138,11 @@ CREATE TABLE Payment_Invoice (
         ON DELETE CASCADE ON UPDATE CASCADE,
     CONSTRAINT chk_amount_non_negative CHECK (Amount >= 0)
 ) ENGINE=InnoDB;
+```
+ 
+## TASK 2: DATABASE DML POPULATION
 
--- ============================================================================
---                     TASK 2: DATABASE DML POPULATION
--- ============================================================================
-
+```sql
 -- Populating Person Table (Saudi Names, Phone Numbers, and Addresses)
 INSERT INTO Person (Full_Name, Phone, Email, Address, User_Type) VALUES
 ('Dr. Sara Al-Qahtani', '+966501234567', 'sara.qahtani@auracare.com.sa', 'Olaya District, Riyadh', 'Doctor'),
@@ -202,12 +199,11 @@ INSERT INTO Payment_Invoice (Amount, Payment_Method, Payment_Status, Invoice_Dat
 (300.00, 'Cash', 'Paid', '2026-10-12', 3),
 (350.00, 'Card', 'Unpaid', '2026-10-13', 4),
 (200.00, 'Insurance', 'Unpaid', '2026-10-14', 5);
+```
 
+## TASK 2: VIEW CREATION
 
--- ============================================================================
---                     TASK 2: VIEW CREATION
--- ============================================================================
-
+```sql
 -- View: vw_Patient_Appointment_History
 -- Academic Explanation: This view consolidates patient and doctor details from the 
 -- Person superclass table with appointment transactional records to provide a 
@@ -227,12 +223,11 @@ JOIN Patient p ON a.Patient_ID = p.Patient_ID
 JOIN Person p_person ON p.Person_ID = p_person.Person_ID
 JOIN Doctor d ON a.Doctor_ID = d.Doctor_ID
 JOIN Person d_person ON d.Person_ID = d_person.Person_ID;
+```
 
+## TASK 2: TRIGGER CREATION
 
--- ============================================================================
---                     TASK 2: TRIGGER CREATION
--- ============================================================================
-
+```sgl
 -- Trigger: trg_Prevent_Invalid_Appointment
 -- Academic Explanation: This trigger enforces business rules and temporal integrity 
 -- by preventing the insertion of appointments scheduled in the past.
@@ -247,12 +242,11 @@ BEGIN
     END IF;
 END //
 DELIMITER ;
+```
 
+## TASK 3: SQL OPERATIONS & TESTING
 
--- ============================================================================
---                     TASK 3: SQL OPERATIONS & TESTING
--- ============================================================================
-
+```sgl
 -- 1. SELECT Statement with WHERE, LIKE, and ORDER BY
 -- Academic Explanation: Retrieves all patients living in Riyadh whose medical history 
 -- contains the word 'allergies', sorted alphabetically by their full name.
@@ -354,12 +348,12 @@ SELECT * FROM vw_Patient_Appointment_History;
 -- Expected Result: SQL Error 1644 (Error: Appointment date cannot be in the past.)
 -- INSERT INTO Appointment (Appt_Date, Appt_Time, Status, Patient_ID, Doctor_ID) 
 -- VALUES ('2020-01-01', '10:00:00', 'Scheduled', 2, 2);
+```
 
 
--- ============================================================================
---                     TASK 4: PROJECT REFLECTION ESSAY
--- ============================================================================
-/*
+## TASK 4: PROJECT REFLECTION ESSAY
+
+
 During the development of the AuraCare Smart Clinic Database System, our team 
 encountered a significant technical challenge regarding table creation order and 
 foreign key constraints. Specifically, when implementing the EER specialization 
@@ -392,4 +386,3 @@ implement Advanced Encryption Standard (AES) encryption at rest for sensitive
 patient medical histories to comply with Saudi healthcare data regulations. 
 Finally, we would develop stored procedures to automate the invoicing process 
 immediately after a medical treatment is logged, reducing manual data entry errors.
-*/
