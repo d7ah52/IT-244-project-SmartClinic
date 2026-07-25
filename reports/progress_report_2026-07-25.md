@@ -1,5 +1,4 @@
-
-COURSE CONTEXT: # IT244 - Introduction to Database
+# IT244 - Introduction to Database
 
 **TEXTBOOK:** Fundamentals of Database Systems (Elmasri & Navathe)
 
@@ -86,7 +85,7 @@ CREATE TABLE Doctor (
     CONSTRAINT chk_fee_positive CHECK (Consultation_Fee > 0)
 ) ENGINE=InnoDB;
 
-4. Transactional Table: Appointment
+-- 4. Transactional Table: Appointment
 CREATE TABLE Appointment (
     Appointment_ID INT AUTO_INCREMENT,
     Appt_Date DATE NOT NULL,
