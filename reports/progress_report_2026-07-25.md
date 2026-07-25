@@ -27,12 +27,13 @@
 4. PLAN FOR WHAT TO DO NEXT:
    - Implement database indexing on high-frequency search columns (Appt_Date).
    - Develop stored procedures to automate invoice generation.
-
+     
 5. GROUP MEMBER PARTICIPATION BREAKDOWN:
-   - Member 1 (Leader): Database Schema Design, DDL Scripting, and Normalization.
-   - Member 2: DML Data Population, Saudi Dataset Localization, and View Creation.
-   - Member 3: Trigger Development, SQL Query Optimization, and Testing.
-   - Member 4: Documentation, GitHub Repository Management, and Reflection Essay.
+
+   * Osama Kheder Aloldail (S240009922 - Lead Architect): System Architecture, EER Specialization Design, Database Setup, and Mid-Project Progress Report.
+   * Ahmed abdullah alharbi (S240032830 - Database Developer): DDL Script Implementation, Relational Schema Definition, and Saudi-Localized Data Population (Task 2).
+   * Mohammed Almoerfi (S240055942 - SQL Specialist): SQL Operations & Joins, Analytics Queries, Daily Schedule View Creation, Double-Booking Trigger (Task 3), and Reflection Essay.
+
 
 
 ##  PROJECT ARTIFACTS
