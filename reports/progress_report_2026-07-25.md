@@ -2,7 +2,7 @@
 -- COURSE CONTEXT: IT244 - Introduction to Database
 -- TEXTBOOK: Fundamentals of Database Systems (Elmasri & Navathe)
 -- PROJECT NAME: AuraCare Smart Clinic Database System
--- SUBMISSION DATE: August 4, 2026
+-- SUBMISSION DATE: July 25, 2026⁠
 -- ============================================================================
 
 -- ============================================================================
@@ -39,7 +39,7 @@
 --                              PROJECT ARTIFACTS
 -- ============================================================================
 /*
-- Live Report Document Link: https://docs.google.com/document/d/1AuraCareSmartClinicReport2026/edit?usp=sharing
+- Live Report Document Link: [https://docs.google.com/document/d/1AuraCareSmartClinicReport2026/edit?usp=sharing](https://docs.google.com/document/d/1-AI9AmQwSCbFYrTkSOxY9n3kVyjo_O4VCezg0pNOZ8s/edit?usp=drivesdk)
 - GitHub Repository Link: https://github.com/SaudiElectronicUniversity/IT244-AuraCare-SmartClinic
 */
 
