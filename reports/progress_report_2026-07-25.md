@@ -1,10 +1,10 @@
 # IT244 - Introduction to Database
 
-**TEXTBOOK:** Fundamentals of Database Systems (Elmasri & Navathe)
+**TEXTBOOK:** **Fundamentals of Database Systems (Elmasri & Navathe)**
 
-**PROJECT** NAME: AuraCare Smart Clinic Database System
+**PROJECT** **NAME:** **AuraCare Smart Clinic Database System**
 
-**SUBMISSION** DATE: July 25, 2026
+**SUBMISSION** **DATE:** **July 25, 2026**
 
 ---
 
