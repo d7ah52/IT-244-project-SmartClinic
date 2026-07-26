@@ -274,25 +274,6 @@ JOIN Doctor d ON a.Doctor_ID = d.Doctor_ID
 JOIN Person d_person ON d.Person_ID = d_person.Person_ID;
 ```
 
-## TASK 2: TRIGGER CREATION
-
-```sgl
--- Trigger: trg_Prevent_Invalid_Appointment
--- Academic Explanation: This trigger enforces business rules and temporal integrity 
--- by preventing the insertion of appointments scheduled in the past.
-DELIMITER //
-CREATE TRIGGER trg_Prevent_Invalid_Appointment
-BEFORE INSERT ON Appointment
-FOR EACH ROW
-BEGIN
-    IF NEW.Appt_Date < CURDATE() THEN
-        SIGNAL SQLSTATE '45000'
-        SET MESSAGE_TEXT = 'Error: Appointment date cannot be in the past.';
-    END IF;
-END //
-DELIMITER ;
-```
-
 ## TASK 3: SQL OPERATIONS & TESTING
 
 ```sgl
@@ -397,6 +378,24 @@ SELECT * FROM vw_Patient_Appointment_History;
 -- Expected Result: SQL Error 1644 (Error: Appointment date cannot be in the past.)
 -- INSERT INTO Appointment (Appt_Date, Appt_Time, Status, Patient_ID, Doctor_ID) 
 -- VALUES ('2020-01-01', '10:00:00', 'Scheduled', 2, 2);
+```
+## TASK 3: TRIGGER CREATION
+
+```sgl
+-- Trigger: trg_Prevent_Invalid_Appointment
+-- Academic Explanation: This trigger enforces business rules and temporal integrity 
+-- by preventing the insertion of appointments scheduled in the past.
+DELIMITER //
+CREATE TRIGGER trg_Prevent_Invalid_Appointment
+BEFORE INSERT ON Appointment
+FOR EACH ROW
+BEGIN
+    IF NEW.Appt_Date < CURDATE() THEN
+        SIGNAL SQLSTATE '45000'
+        SET MESSAGE_TEXT = 'Error: Appointment date cannot be in the past.';
+    END IF;
+END //
+DELIMITER ;
 ```
 
 
