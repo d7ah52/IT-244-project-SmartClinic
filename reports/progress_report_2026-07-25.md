@@ -1,6 +1,6 @@
 # IT244 - Introduction to Database
 
-**TEXTBOOK:** **Fundamentals of Database Systems (Elmasri & Navathe)**
+**TEXTBOOK:** **Fundamentals of Database Systems **
 
 **PROJECT** **NAME:** **AuraCare Smart Clinic Database System**
 
