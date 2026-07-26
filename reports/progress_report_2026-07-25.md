@@ -42,6 +42,55 @@
 
 
 
+## TASK 1: DATABASE DESIGN
+
+### 1. System Description & Design Assumptions
+The **AuraCare Smart Clinic Database System** is designed to digitize clinic management by consolidating patient administration, clinical consultations, medical prescriptions, and financial billing.
+
+**Design Assumptions & Business Rules:**
+1. **Inheritance & User Categorization:** Every user interacting with the system is classified under the `Person` superclass. The subclasses `Patient` and `Doctor` inherit contact details using EER Option 8A to enforce 1:1 entity mapping and eliminate data redundancy.
+2. **Appointment Scheduling:** A `Patient` can schedule multiple `Appointment`s with a `Doctor` (1:N relationship). However, each individual appointment is linked to exactly one patient and one doctor.
+3. **Medical Treatment & Prescriptions:** Each completed appointment results in at most one `Medical_Treatment` record (1:1 relationship). A medical treatment can include one or more `Medicine_Prescription`s (1:N relationship).
+4. **Billing Integrity:** Every appointment generates exactly one `Payment_Invoice` (1:1 relationship) to track financial settlement.
+
+---
+
+### 2. Relational Schema Mapping
+Below is the logical relational schema mapped directly from the EER Conceptual Diagram in accordance with 3NF guidelines:
+
+* **Person** (<u>Person_ID</u>, Full_Name, Phone, Email, Address, User_Type)
+* **Patient** (<u>Patient_ID</u>, Blood_Group, Emergency_Contact, Medical_History, Person_ID)
+  * *Foreign Key:* Person_ID references `Person(Person_ID)`
+* **Doctor** (<u>Doctor_ID</u>, Specialization, Medical_License_No, Consultation_Fee, Person_ID)
+  * *Foreign Key:* Person_ID references `Person(Person_ID)`
+* **Appointment** (<u>Appointment_ID</u>, Appt_Date, Appt_Time, Status, Patient_ID, Doctor_ID)
+  * *Foreign Keys:* Patient_ID references `Patient(Patient_ID)`, Doctor_ID references `Doctor(Doctor_ID)`
+* **Medical_Treatment** (<u>Treatment_ID</u>, Diagnosis, Treatment_Date, Appointment_ID)
+  * *Foreign Key:* Appointment_ID references `Appointment(Appointment_ID)`
+* **Medicine_Prescription** (<u>Prescription_ID</u>, Medicine_Name, Dosage, Duration_Days, Treatment_ID)
+  * *Foreign Key:* Treatment_ID references `Medical_Treatment(Treatment_ID)`
+* **Payment_Invoice** (<u>Invoice_ID</u>, Amount, Payment_Method, Payment_Status, Invoice_Date, Appointment_ID)
+  * *Foreign Key:* Appointment_ID references `Appointment(Appointment_ID)`
+
+---
+
+### 3. Normalization Analysis (1NF, 2NF, 3NF)
+To guarantee database consistency and prevent update, insertion, and deletion anomalies, the database schema is fully normalized up to the **Third Normal Form (3NF)**:
+
+1. **First Normal Form (1NF):**
+   - All attributes contain indivisible (atomic) values.
+   - Repeating groups (e.g., diagnoses or multiple prescribed medicines) are decomposed into separate relations (`Medical_Treatment` and `Medicine_Prescription`) with defined primary keys.
+
+2. **Second Normal Form (2NF):**
+   - The schema is in 1NF and exhibits **no partial functional dependencies**.
+   - All relations utilize single-attribute Primary Keys (e.g., Appointment_ID -> Appt_Date, Appt_Time, Status), which ensures that non-key attributes depend fully on the complete Primary Key.
+
+3. **Third Normal Form (3NF):**
+   - The schema is in 2NF and exhibits **no transitive functional dependencies**.
+   - Non-prime attributes depend exclusively on candidate primary keys. Attributes such as Consultation_Fee depend strictly on Doctor_ID and not on appointment or patient data. Cross-entity relationships are maintained strictly via Foreign Keys.
+
+
+
 ## TASK 2: DATABASE DDL IMPLEMENTATION
 
 ```sql
