@@ -30,7 +30,7 @@
      
 5. GROUP MEMBER PARTICIPATION BREAKDOWN:
 
-   * Osama Kheder Aloldail (S240009922 - Lead Architect): System Architecture, EER Specialization Design, Database Setup, and Mid-Project Progress Report.
+   * Osama Kheder Aloldail (S240009922 - Lead Architect): Task 1 (System Architecture, EER Specialization Design Option 8A, Relational Mapping & Normalization 3NF) & Task 4 (Project Reflection Essay, Version History Management & Final Report Integration)
    * Ahmed abdullah alharbi (S240032830 - Database Developer): DDL Script Implementation, Relational Schema Definition, and Saudi-Localized Data Population (Task 2).
    * Mohammed Almoerfi (S240055942 - SQL Specialist): SQL Operations & Joins, Analytics Queries, Daily Schedule View Creation, Double-Booking Trigger (Task 3), and Reflection Essay.
 
