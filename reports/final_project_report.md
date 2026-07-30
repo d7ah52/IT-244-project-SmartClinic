@@ -155,6 +155,7 @@ To guarantee database consistency and prevent update, insertion, and deletion an
 
 ## TASK 2: DATABASE DDL IMPLEMENTATION
 
+```sql
 DROP DATABASE IF EXISTS SmartClinicDB;
 CREATE DATABASE IF NOT EXISTS SmartClinicDB;
 USE SmartClinicDB;
@@ -248,9 +249,11 @@ CREATE TABLE Payment_Invoice (
         ON DELETE CASCADE ON UPDATE CASCADE,
     CONSTRAINT chk_amount_non_negative CHECK (Amount >= 0)
 ) ENGINE=InnoDB;
+```
 
 ## TASK 2: DATABASE DML POPULATION
 
+```sql
 -- Populating Person Table (Saudi Names, Phone Numbers, and Addresses)
 INSERT INTO Person (Full_Name, Phone, Email, Address, User_Type) VALUES
 ('Dr. Sara Al-Qahtani', '+966501234567', 'sara.qahtani@auracare.com.sa', 'Olaya District, Riyadh', 'Doctor'),
@@ -329,9 +332,11 @@ JOIN Patient p ON a.Patient_ID = p.Patient_ID
 JOIN Person p_person ON p.Person_ID = p_person.Person_ID
 JOIN Doctor d ON a.Doctor_ID = d.Doctor_ID
 JOIN Person d_person ON d.Person_ID = d_person.Person_ID;
+```
 
 ## TASK 3: SQL OPERATIONS & TESTING
 
+```sql
 -- 1. SELECT Statement with WHERE, LIKE, and ORDER BY
 -- Academic Explanation: Retrieves all patients living in Riyadh whose medical history 
 -- contains the word 'allergies', sorted alphabetically by their full name.
@@ -433,9 +438,11 @@ SELECT * FROM vw_Patient_Appointment_History;
 -- Expected Result: SQL Error 1644 (Error: Appointment date cannot be in the past.)
 -- INSERT INTO Appointment (Appt_Date, Appt_Time, Status, Patient_ID, Doctor_ID) 
 -- VALUES ('2020-01-01', '10:00:00', 'Scheduled', 2, 2);
+```
 
 ## TASK 3: TRIGGER CREATION
 
+```sql
 -- Trigger: trg_Prevent_Invalid_Appointment
 -- Academic Explanation: This trigger enforces business rules and temporal integrity 
 -- by preventing the insertion of appointments scheduled in the past.
@@ -450,6 +457,7 @@ BEGIN
     END IF;
 END //
 DELIMITER ;
+```
 
 ## TASK 4: PROJECT REFLECTION ESSAY
 
