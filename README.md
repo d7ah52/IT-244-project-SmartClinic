@@ -33,19 +33,23 @@ The **AuraCare Smart Clinic Database System** is an academic project developed a
 ## Screenshot Section Summaries
 
 - **EER Diagram**: Visual representation of the database structure, showcasing the superclass/subclass relationships and entity mappings.
-  > 📸 **[INSERT SCREENSHOT HERE: EER Diagram]**
+  >  <img width="600" height="656" alt="Screenshot 1448-02-16 at 2 05 13 PM" src="https://github.com/user-attachments/assets/b5ae7f90-e84b-463f-8929-231353c8db4e" />
 
 - **Database Schema**: Screenshots of the database schema as viewed in MySQL Workbench, highlighting table structures and relationships.
-  > 📸 **[INSERT SCREENSHOT HERE: Database Schema]**
+  > <img width="819" height="445" alt="Screenshot 1448-02-16 at 2 36 53 PM" src="https://github.com/user-attachments/assets/cdb92e52-b7f2-4ae3-ae97-cc721205f288" />
+
 
 - **Sample Data**: Screenshots of sample data entries in key tables, demonstrating the use of realistic Saudi clinical records.
-  > 📸 **[INSERT SCREENSHOT HERE: Sample Data]**
+  > <img width="811" height="318" alt="Screenshot 1448-02-16 at 2 34 14 PM" src="https://github.com/user-attachments/assets/db6a771d-8da5-4b14-9400-c5ef2707c048" />
+
 
 - **SQL Query Results**: Screenshots of query results for various SQL operations, including joins, subqueries, and aggregations.
-  > 📸 **[INSERT SCREENSHOT HERE: SQL Query Results]**
+  > <img width="614" height="124" alt="Screenshot 1448-02-16 at 2 34 40 PM" src="https://github.com/user-attachments/assets/f7056677-05a4-4147-869b-14facb6774e1" />
+
 
 - **Trigger Execution**: Screenshots showing the execution and validation of triggers, ensuring business rules are enforced.
-  > 📸 **[INSERT SCREENSHOT HERE: Trigger Execution]**
+  > <img width="819" height="463" alt="Screenshot 1448-02-16 at 2 45 04 PM" src="https://github.com/user-attachments/assets/4eca41b1-6653-454e-8b85-c996ad04302f" />
+
 
 ## Project Artifacts
 
