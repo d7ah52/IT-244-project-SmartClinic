@@ -143,4 +143,4 @@ INSERT INTO Payment_Invoice (Amount, Payment_Method, Payment_Status, Invoice_Dat
 (250.00, 'Insurance', 'Paid', '2026-10-11', 2), 
 (300.00, 'Cash', 'Paid', '2026-10-12', 3), 
 (350.00, 'Card', 'Unpaid', '2026-10-13', 4), 
-(200.00, 'Insurance', 'Unpaid', '2026-10-14', 5)
+(200.00, 'Insurance', 'Unpaid', '2026-10-14', 5);
