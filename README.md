@@ -36,7 +36,8 @@ The **AuraCare Smart Clinic Database System** is an academic project developed a
   >  <img width="600" height="656" alt="Screenshot 1448-02-16 at 2 05 13 PM" src="https://github.com/user-attachments/assets/b5ae7f90-e84b-463f-8929-231353c8db4e" />
 
 - **Database Schema**: Screenshots of the database schema as viewed in MySQL Workbench, highlighting table structures and relationships.
-  > <img width="819" height="445" alt="Screenshot 1448-02-16 at 2 36 53 PM" src="https://github.com/user-attachments/assets/cdb92e52-b7f2-4ae3-ae97-cc721205f288" />
+  > <img width="441" height="533" alt="Screenshot 1448-02-16 at 3 29 52 PM" src="https://github.com/user-attachments/assets/cec72651-2d76-4096-8f52-592b2d6f9133" />
+
 
 
 - **Sample Data**: Screenshots of sample data entries in key tables, demonstrating the use of realistic Saudi clinical records.
@@ -44,11 +45,13 @@ The **AuraCare Smart Clinic Database System** is an academic project developed a
 
 
 - **SQL Query Results**: Screenshots of query results for various SQL operations, including joins, subqueries, and aggregations.
-  > <img width="614" height="124" alt="Screenshot 1448-02-16 at 2 34 40 PM" src="https://github.com/user-attachments/assets/f7056677-05a4-4147-869b-14facb6774e1" />
+  > <img width="1050" height="636" alt="Screenshot 1448-02-16 at 3 08 00 PM" src="https://github.com/user-attachments/assets/6982107b-81d5-4b05-a666-af8322d15014" />
+
 
 
 - **Trigger Execution**: Screenshots showing the execution and validation of triggers, ensuring business rules are enforced.
-  > <img width="819" height="463" alt="Screenshot 1448-02-16 at 2 45 04 PM" src="https://github.com/user-attachments/assets/4eca41b1-6653-454e-8b85-c996ad04302f" />
+  > <img width="1028" height="658" alt="Screenshot 1448-02-16 at 3 14 52 PM" src="https://github.com/user-attachments/assets/b358017f-5d70-4441-9549-f3367e43e398" />
+
 
 
 ## Project Artifacts
