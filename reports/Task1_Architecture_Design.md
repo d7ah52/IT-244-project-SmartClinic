@@ -80,6 +80,7 @@ erDiagram
         string Payment_Status
         date Invoice_Date
     }
+```
 
 ### 3. 3NF Normalization Mapping
 
