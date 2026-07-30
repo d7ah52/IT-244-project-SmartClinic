@@ -54,6 +54,69 @@ The **AuraCare Smart Clinic Database System** is designed to digitize clinic man
 3. **Medical Treatment & Prescriptions:** Each completed appointment results in at most one `Medical_Treatment` record (1:1 relationship). A medical treatment can include one or more `Medicine_Prescription`s (1:N relationship).
 4. **Billing Integrity:** Every appointment generates exactly one `Payment_Invoice` (1:1 relationship) to track financial settlement.
 
+```mermaid
+erDiagram
+    PERSON ||--o{ PATIENT : inherits
+    PERSON ||--o{ DOCTOR : inherits
+    PATIENT ||--o{ APPOINTMENT : schedules
+    DOCTOR ||--o{ APPOINTMENT : assigned_to
+    APPOINTMENT ||--o| MEDICAL_TREATMENT : results_in
+    MEDICAL_TREATMENT ||--o{ MEDICINE_PRESCRIPTION : includes
+    APPOINTMENT ||--o| PAYMENT_INVOICE : generates
+
+    PERSON {
+        int Person_ID PK
+        string Full_Name
+        string Phone
+        string Email
+        string Address
+        string User_Type
+    }
+    PATIENT {
+        int Patient_ID PK
+        int Person_ID FK
+        string Blood_Group
+        string Emergency_Contact
+        string Medical_History
+    }
+    DOCTOR {
+        int Doctor_ID PK
+        int Person_ID FK
+        string Specialization
+        string Medical_License_No
+        decimal Consultation_Fee
+    }
+    APPOINTMENT {
+        int Appointment_ID PK
+        int Patient_ID FK
+        int Doctor_ID FK
+        date Appt_Date
+        time Appt_Time
+        string Status
+    }
+    MEDICAL_TREATMENT {
+        int Treatment_ID PK
+        int Appointment_ID FK
+        string Diagnosis
+        date Treatment_Date
+    }
+    MEDICINE_PRESCRIPTION {
+        int Prescription_ID PK
+        int Treatment_ID FK
+        string Medicine_Name
+        string Dosage
+        int Duration_Days
+    }
+    PAYMENT_INVOICE {
+        int Invoice_ID PK
+        int Appointment_ID FK
+        decimal Amount
+        string Payment_Method
+        string Payment_Status
+        date Invoice_Date
+    }
+```
+
 ### 2. Relational Schema Mapping
 
 Below is the logical relational schema mapped directly from the EER Conceptual Diagram in accordance with 3NF guidelines:
