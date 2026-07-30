@@ -17,6 +17,70 @@ The decision to use **Option 8A** (Superclass `Person` with Subclasses `Patient`
 - **Maintain Clean Inheritance:** This approach allows for a clear inheritance structure where specific attributes and behaviors of `Patient` and `Doctor` are managed in their respective tables, while common attributes are centralized in the `Person` table.
 - **Simplify User Management:** The system can easily categorize users into different roles (e.g., patient, doctor, staff) using the `User_Type` attribute, facilitating role-based access and operations.
 
+#### EER Diagram (Mermaid Representation)
+
+```mermaid
+erDiagram
+    PERSON ||--o{ PATIENT : inherits
+    PERSON ||--o{ DOCTOR : inherits
+    PATIENT ||--o{ APPOINTMENT : schedules
+    DOCTOR ||--o{ APPOINTMENT : assigned_to
+    APPOINTMENT ||--o| MEDICAL_TREATMENT : results_in
+    MEDICAL_TREATMENT ||--o{ MEDICINE_PRESCRIPTION : includes
+    APPOINTMENT ||--o| PAYMENT_INVOICE : generates
+
+    PERSON {
+        int Person_ID PK
+        string Full_Name
+        string Phone
+        string Email
+        string Address
+        string User_Type
+    }
+    PATIENT {
+        int Patient_ID PK
+        int Person_ID FK
+        string Blood_Group
+        string Emergency_Contact
+        string Medical_History
+    }
+    DOCTOR {
+        int Doctor_ID PK
+        int Person_ID FK
+        string Specialization
+        string Medical_License_No
+        decimal Consultation_Fee
+    }
+    APPOINTMENT {
+        int Appointment_ID PK
+        int Patient_ID FK
+        int Doctor_ID FK
+        date Appt_Date
+        time Appt_Time
+        string Status
+    }
+    MEDICAL_TREATMENT {
+        int Treatment_ID PK
+        int Appointment_ID FK
+        string Diagnosis
+        date Treatment_Date
+    }
+    MEDICINE_PRESCRIPTION {
+        int Prescription_ID PK
+        int Treatment_ID FK
+        string Medicine_Name
+        string Dosage
+        int Duration_Days
+    }
+    PAYMENT_INVOICE {
+        int Invoice_ID PK
+        int Appointment_ID FK
+        decimal Amount
+        string Payment_Method
+        string Payment_Status
+        date Invoice_Date
+    }
+
 ### 3. 3NF Normalization Mapping
 
 The relational schema is meticulously designed to adhere to the **Third Normal Form (3NF)**, ensuring data integrity and minimizing redundancy:
