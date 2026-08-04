@@ -14,9 +14,8 @@ ORDER BY p_person.Full_Name ASC;
 This query retrieves all patients living in Riyadh whose medical history contains the word 'allergies', sorted alphabetically by their full name.
 
 
-> <img width="1700" height="182" alt="1" src="https://github.com/user-attachments/assets/b1fa5ee5-dc7d-44a7-829a-026da391ee60" />
-<img width="2668" height="264" alt="2" src="https://github.com/user-attachments/assets/98d42a96-0cdf-478b-a1f8-9b44f2f094ac" />
-<img width="2668" height="264" alt="2" src="https://github.com/user-attachments/assets/6b7a4886-ba8d-4542-88ac-7b758825fe39" />
+<img width="1700" height="182" alt="1" src="https://github.com/user-attachments/assets/f98b8560-e5a7-4c1b-a701-19a9234e6447" />
+
 
 
 ### 2. Complex Multi-Table INNER JOIN
